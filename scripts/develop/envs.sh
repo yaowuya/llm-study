@@ -1,0 +1,5 @@
+export APP_ID="python3-vue"
+export APP_TOKEN="4f0580f8-a7e4-4483-9e3e-12f560fffcd9"
+export RUN_VER="open"
+export BK_URL="https://paas.cwbk.com:443"
+export BK_PAAS_HOST="https://paas.cwbk.com:443"
