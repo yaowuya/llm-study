@@ -80,12 +80,12 @@ class Embedding:
         print(df["embedding"][0])
 
     @classmethod
-    def search_by_embedding(cls):
+    def search_by_embedding(cls, product_description):
         embedding_datapath = "./apps/open_api/data/fine_food_reviews_with_embeddings_1k_1126.csv"
         df_embedded = pd.read_csv(embedding_datapath, index_col=0)
-        print(df_embedded["embedding"])
         # 将字符串转换为向量
         df_embedded["embedding_vec"] = df_embedded["embedding"].apply(ast.literal_eval)
+        cls.search_reviews(df_embedded, product_description, n=3)
 
     @staticmethod
     def cosine_similarity(a, b):
@@ -116,4 +116,5 @@ class Embedding:
 if __name__ == "__main__":
     # 向量化,会消耗token
     # Embedding.create_embedding()
-    Embedding.search_by_embedding()
+    # Embedding.search_by_embedding("dog food")
+    Embedding.search_by_embedding("dog food")
