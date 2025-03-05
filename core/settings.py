@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     app_port: int = 8080
     env: str = "prod"
     base_dir: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    open_api_key: str = ""
 
     logging_dir = os.path.join(base_dir, "logs")
     logging_level = "INFO"
