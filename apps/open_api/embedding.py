@@ -7,6 +7,10 @@ from openai import OpenAI
 
 from core.settings import settings
 
+"""
+向量化embedding
+"""
+
 OPEN_API_CLIENT = OpenAI(api_key=settings.open_api_key)
 
 
