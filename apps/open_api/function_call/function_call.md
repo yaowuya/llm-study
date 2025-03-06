@@ -13,3 +13,28 @@
 如果使用了某个函数，则响应中的输出将包含`"finish_reason": "function_call"`，以及一个具有该函数名称和生成的函数参数的`function_call`对象。
 
 ![function_calling](../../../asserts/images/function_calling.png)
+
+
+
+# function_calling 执行日志
+```python
+system: Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.
+
+user: What's the weather like today
+
+assistant[content]: Sure, could you please provide me with the city and state for which you would like to know the weather?
+
+[{'role': 'system', 'content': "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."}, {'role': 'user', 'content': "What's the weather like today"}, {'role': 'assistant', 'content': 'Sure, could you please provide me with the city and state for which you would like to know the weather?', 'refusal': None}]
+system: Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.
+
+user: What's the weather like today
+
+assistant[content]: Sure, could you please provide me with the city and state for which you would like to know the weather?
+
+user: I'm in Shanghai, China.
+
+assistant[function_call]: {'name': 'get_current_weather', 'arguments': '{"location":"Shanghai, China","format":"celsius"}'}
+
+[{'role': 'system', 'content': "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."}, {'role': 'user', 'content': "What's the weather like today"}, {'role': 'assistant', 'content': 'Sure, could you please provide me with the city and state for which you would like to know the weather?', 'refusal': None}, {'role': 'user', 'content': "I'm in Shanghai, China."}, {'role': 'assistant', 'content': None, 'function_call': {'name': 'get_current_weather', 'arguments': '{"location":"Shanghai, China","format":"celsius"}'}, 'refusal': None}]
+
+```
