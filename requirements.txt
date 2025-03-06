@@ -18,3 +18,5 @@ matplotlib==3.10.1
 plotly==6.0.0
 scikit-learn==1.6.1
 numpy==2.2.3
+tenacity==9.0.0
+termcolor==2.5.0
