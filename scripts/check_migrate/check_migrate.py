@@ -152,7 +152,7 @@ def handle_create_model(file_path, library):
         index = 0
         for line in ret:
             single_line = line.strip().strip(",")
-            # 匹配 migrations 文件中新建 model 的语句
+            # 匹配 migrations 文件中新建 model_io 的语句
             if "migrations.CreateModel(" in single_line:
                 create = True
                 index += 1

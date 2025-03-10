@@ -15,7 +15,7 @@ class FunctionCall:
         # 定义一个函数chat_completion_request，主要用于发送 聊天补全 请求到OpenAI服务器
         """
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {settings.open_api_key}"}
-        json_data = {"model": model, "messages": messages}
+        json_data = {"model_io": model, "messages": messages}
         if functions is not None:
             json_data["functions"] = functions
         if function_call is not None:
